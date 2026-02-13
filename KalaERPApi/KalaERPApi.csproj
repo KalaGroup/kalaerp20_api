@@ -1,0 +1,725 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{59A99FE5-3373-42DC-BC74-78374FCE2BC4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KalaERPApi</RootNamespace>
+    <AssemblyName>KalaERPApi</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44386</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\CrystalDecisions.Data.AdoDotNetInterop.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.Framework">
+      <HintPath>..\..\..\..\..\C\New folder\CrystalDecisions.Enterprise.Framework.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.Enterprise.InfoStore">
+      <HintPath>..\..\..\..\..\C\CrystalDecisions.Enterprise.InfoStore.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ClientDoc">
+      <HintPath>..\..\..\..\..\C\New folder\CrystalDecisions.ReportAppServer.ClientDoc.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\CrystalDecisions.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authentication.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authentication.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authentication.Core.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.Authentication.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authorization, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authorization.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.Authorization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Authorization.Policy, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Authorization.Policy.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.Authorization.Policy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Hosting.Server.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Hosting.Server.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Extensions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Extensions.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Http.Features.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.JsonPatch, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.JsonPatch.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.JsonPatch.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Core.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Formatters.Json, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Mvc.Formatters.Json.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Formatters.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.ResponseCaching.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.ResponseCaching.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Routing.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.Routing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Routing.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.Routing.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.Routing.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.WebUtilities, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNetCore.WebUtilities.2.0.0\lib\netstandard2.0\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.DotNet.PlatformAbstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.DotNet.PlatformAbstractions.2.0.0\lib\net45\Microsoft.DotNet.PlatformAbstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyModel, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyModel.2.0.0\lib\net451\Microsoft.Extensions.DependencyModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Hosting.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Hosting.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Hosting.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.ObjectPool, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.ObjectPool.2.0.0\lib\netstandard2.0\Microsoft.Extensions.ObjectPool.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Headers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.Headers.2.0.0\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common">
+      <HintPath>..\..\..\..\..\C\DD\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms">
+      <HintPath>..\..\..\..\..\C\DD\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms">
+      <HintPath>..\..\..\..\..\C\DD\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Device" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.2.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.4.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.4.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Extensions.Design" />
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\Accounts\Trans\InvoiceScanController.cs" />
+    <Compile Include="Controllers\Biotech\Reports\ServiceMttrBioController.cs" />
+    <Compile Include="Controllers\Biotech\Trans\ComplaintActiontakenController.cs" />
+    <Compile Include="Controllers\Biotech\Trans\ComplaintAllocController.cs" />
+    <Compile Include="Controllers\Biotech\Trans\CustomerComplaintController.cs" />
+    <Compile Include="Controllers\Biotech\Trans\PaymentRequisitionController.cs" />
+    <Compile Include="Controllers\Biotech\Trans\InvoiceBioSerController.cs" />
+    <Compile Include="Controllers\BOMController.cs" />
+    <Compile Include="Controllers\ColdStorageController.cs" />
+    <Compile Include="Controllers\Corporate\Reports\CorporateRequisitionController.cs" />
+    <Compile Include="Controllers\Corporate\Trans\CorporateReqActionController.cs" />
+    <Compile Include="Controllers\Corporate\Trans\CorporateReqController.cs" />
+    <Compile Include="Controllers\Corporate\Trans\CorporateReqFeedbackController.cs" />
+    <Compile Include="Controllers\KalaSpan\GRInreturnableController.cs" />
+    <Compile Include="Controllers\KalaSpan\KalaSpanStageController.cs" />
+    <Compile Include="Controllers\Maintenance\MaintenanceController.cs" />
+    <Compile Include="Controllers\Marketing\Plan\VisitingPlanController.cs" />
+    <Compile Include="Controllers\Marketing\Trans\EnquiryController.cs" />
+    <Compile Include="Controllers\Marketing\Trans\MOFController.cs" />
+    <Compile Include="Controllers\Production\Canopy\Plan\JobCard_CpyController.cs" />
+    <Compile Include="Controllers\Production\Canopy\Trans\CpyPrcController.cs" />
+    <Compile Include="Controllers\Production\Common\Trans\MTFScanController.cs" />
+    <Compile Include="Controllers\Production\Common\Trans\MTFWIPInternalController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProcessController.cs" />
+    <Compile Include="Controllers\Production\Common\Trans\QRScanController.cs" />
+    <Compile Include="Controllers\Production\Common\Trans\ReverseTransController.cs" />
+    <Compile Include="Controllers\Production\CP\Plan\ControlPanelController.cs" />
+    <Compile Include="Controllers\Production\DG\Master\ProcessCheckPtsController.cs" />
+    <Compile Include="Controllers\Production\DG\Plan\JobCardController.cs" />
+    <Compile Include="Controllers\Production\DG\Trans\DGStage4Controller.cs" />
+    <Compile Include="Controllers\Production\DG\Trans\DGStageController.cs" />
+    <Compile Include="Controllers\Production\DG\Trans\PackingslipController.cs" />
+    <Compile Include="Controllers\Production\DG\Trans\TestReportController.cs" />
+    <Compile Include="Controllers\Production\DG\Trans\VehicleOutController.cs" />
+    <Compile Include="Controllers\Production\DG\Trans\VehicleOutCustFbkController.cs" />
+    <Compile Include="Controllers\Production\WiringHarness\Plan\JobCard_WHController.cs" />
+    <Compile Include="Controllers\PurchaseRequisitionController.cs" />
+    <Compile Include="Controllers\Purchase\Trans\SuppTOCController.cs" />
+    <Compile Include="Controllers\UserActivity\LoginAppController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Accounts\Trans\InvoiceScanRequest.cs" />
+    <Compile Include="Models\Biotech\Trans\ComplaintActiontakenRequest.cs" />
+    <Compile Include="Models\Biotech\Trans\ComplaintAllocRequest.cs" />
+    <Compile Include="Models\Biotech\Trans\CustomerComplaintRequest.cs" />
+    <Compile Include="Models\Biotech\Trans\InvoiceBioSerRequest.cs" />
+    <Compile Include="Models\Corporate\Trans\CorporateReqActionRequest.cs" />
+    <Compile Include="Models\Corporate\Trans\CorporateReqFeedbackRequest.cs" />
+    <Compile Include="Models\Corporate\Trans\CorporateReqRequest.cs" />
+    <Compile Include="Models\KalaSpan\GRInreturnableRequest.cs" />
+    <Compile Include="Models\KalaSpan\KalaSpanStageRequest.cs" />
+    <Compile Include="Models\Marketing\Auth\MOFNFALevelAuth.cs" />
+    <Compile Include="Models\Marketing\Auth\NFAEntryAuth.cs" />
+    <Compile Include="Models\Marketing\Plan\ILocation.cs" />
+    <Compile Include="Models\Marketing\Plan\VisitingPlanExpRequest.cs" />
+    <Compile Include="Models\Marketing\Plan\VisitingPlanRequest.cs" />
+    <Compile Include="Models\Marketing\Trans\EnquirySaveModel.cs" />
+    <Compile Include="Models\MTFWIPInternalRequest.cs" />
+    <Compile Include="Models\Production\Canopy\Plan\JobCard_CpyRequest.cs" />
+    <Compile Include="Models\Production\Canopy\Trans\CpyPrcBendRequest.cs" />
+    <Compile Include="Models\Production\Canopy\Trans\CpyPrcCNCRequest.cs" />
+    <Compile Include="Models\Production\Canopy\Trans\CpyPrcCpyRequest.cs" />
+    <Compile Include="Models\Production\Canopy\Trans\CpyPrcFabRequest.cs" />
+    <Compile Include="Models\Production\Canopy\Trans\CpyPrcPartcutRequest.cs" />
+    <Compile Include="Models\Production\Canopy\Trans\CpyPrcPCRequest.cs" />
+    <Compile Include="Models\Production\Canopy\Trans\CpyRevRequest.cs" />
+    <Compile Include="Models\Production\Common\Trans\MTFScanRequest.cs" />
+    <Compile Include="Models\Production\Common\Trans\QRScanRequest.cs" />
+    <Compile Include="Models\Production\Common\Trans\ReverseTransRequest.cs" />
+    <Compile Include="Models\Production\CP\Plan\ControlPanel_Request.cs" />
+    <Compile Include="Models\Production\DG\Master\ProcessCheckPtsRequest.cs" />
+    <Compile Include="Models\Production\DG\Plan\JobCard2Request.cs" />
+    <Compile Include="Models\Production\DG\Plan\JobCardRequest.cs" />
+    <Compile Include="Models\Production\DG\Trans\DGStage4Request.cs" />
+    <Compile Include="Models\Production\DG\Trans\DGStageRequest.cs" />
+    <Compile Include="Models\Production\DG\Trans\DITRAllocationRequest.cs" />
+    <Compile Include="Models\Production\DG\Trans\PackingslipRequest.cs" />
+    <Compile Include="Models\Production\DG\Trans\TestReportRequest.cs" />
+    <Compile Include="Models\Production\DG\Trans\VehicleOutCustFbkRequest.cs" />
+    <Compile Include="Models\Production\DG\Trans\VehicleOutRequest.cs" />
+    <Compile Include="Models\Production\WiringHarness\Plan\JobCard_WHRequest.cs" />
+    <Compile Include="Models\PurchaseRequisitionRequest.cs" />
+    <Compile Include="Models\UserActivity\DeviceLocation.cs" />
+    <Compile Include="Models\PurchaseRequisitionResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Accounts\Trans\InvScanCon.cs" />
+    <Compile Include="Service\Biotech\Trans\ComplaintActiontakenCon.cs" />
+    <Compile Include="Service\Biotech\Trans\ComplaintAllocCon.cs" />
+    <Compile Include="Service\Biotech\Trans\InvoiceBioSerCon.cs" />
+    <Compile Include="Service\Biotech\Trans\PaymentRequisitionCon.cs" />
+    <Compile Include="Service\ColdStorageCon.cs" />
+    <Compile Include="Service\CommonCon.cs" />
+    <Compile Include="Service\Corporate\Trans\CorporateReqActionCon.cs" />
+    <Compile Include="Service\Corporate\Trans\CorporateReqCon.cs" />
+    <Compile Include="Service\Corporate\Trans\CorporateReqFeedbackCon.cs" />
+    <Compile Include="Service\DBConnection.cs" />
+    <Compile Include="Service\Biotech\Trans\CustomerComplaintCon.cs" />
+    <Compile Include="Service\KalaSpan\GRInreturnableCon.cs" />
+    <Compile Include="Service\KalaSpan\KalaSpanStageCon.cs" />
+    <Compile Include="Service\Maintenance\MaintenanceCon.cs" />
+    <Compile Include="Service\Marketing\Auth\MOF_Service.cs" />
+    <Compile Include="Service\Marketing\Plan\VisitingPlanCon.cs" />
+    <Compile Include="Service\Marketing\Trans\EnquiryService.cs" />
+    <Compile Include="Service\ProcessCon.cs" />
+    <Compile Include="Service\Production\Canopy\Plan\JobCard_CpyCon.cs" />
+    <Compile Include="Service\Production\Canopy\Trans\CpyPrcCon.cs" />
+    <Compile Include="Service\Production\Common\Trans\MTFScanCon.cs" />
+    <Compile Include="Service\Production\Common\Trans\MTFWIPInternalCon.cs" />
+    <Compile Include="Service\Production\Common\Trans\QRScanCon.cs" />
+    <Compile Include="Service\Production\Common\Trans\ReverseTransCon.cs" />
+    <Compile Include="Service\Production\CP\Plan\ControlPanel_Con.cs" />
+    <Compile Include="Service\Production\DG\Master\ProcessCheckPtsCon.cs" />
+    <Compile Include="Service\Production\DG\Plan\JobCardCon.cs" />
+    <Compile Include="Service\Production\DG\Trans\DGStageCon.cs" />
+    <Compile Include="Service\Production\DG\Trans\PackingslipCon.cs" />
+    <Compile Include="Service\Production\DG\Trans\TestReportCon.cs" />
+    <Compile Include="Service\Production\DG\Trans\VehicleOutCon.cs" />
+    <Compile Include="Service\Production\DG\Trans\VehicleOutCustFbkCon.cs" />
+    <Compile Include="Service\Production\WiringHarness\Plan\JobCard_WHCon.cs" />
+    <Compile Include="Service\UserActivity\LoginAppCon.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="images\kalalogo.JPG" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <Content Include="quotation\catloge\Kirloskar_1250_To_1500_kVA.pdf" />
+    <Content Include="quotation\catloge\Kirloskar_1250_To_1500_kVA_OLD.pdf" />
+    <Content Include="quotation\catloge\Kirloskar_15_To_30_kVA.pdf" />
+    <Content Include="quotation\catloge\Kirloskar_200_To_250_kVA.pdf" />
+    <Content Include="quotation\catloge\Kirloskar_2kW_5kVA.pdf" />
+    <Content Include="quotation\catloge\Kirloskar_320_1010_kVA.pdf" />
+    <Content Include="quotation\catloge\Kirloskar_40_To_160_kVA.pdf" />
+    <Content Include="quotation\catloge\Kirloskar_R550_15_kVA.pdf" />
+    <Content Include="quotation\catloge\rptOrderAcceptanceGST.rpt.exclude" />
+    <Content Include="quotation\CPCB4\CPCB_IV+1010-1500_kVA.pdf" />
+    <Content Include="quotation\CPCB4\CPCB_IV+2.8-5.5_kVA.pdf" />
+    <Content Include="quotation\CPCB4\CPCB_IV+200-250_kVA.pdf" />
+    <Content Include="quotation\CPCB4\CPCB_IV+25-58.5_kVA.pdf" />
+    <Content Include="quotation\CPCB4\CPCB_IV+320-750_kVA.pdf" />
+    <Content Include="quotation\CPCB4\CPCB_IV+7.5-20_kVA.pdf" />
+    <Content Include="quotation\CPCB4\CPCB_IV+82.5-160_kVA.pdf" />
+    <Content Include="quotation\CPCB4\NG_CPCB IV+15-250_kVA.pdf" />
+    <Content Include="quotation\CPCB4\Old\CPCB_IV+200-250_kVA.PDF" />
+    <Content Include="quotation\CPCB4\Old\CPCB_IV+25-58.5_kVA.PDF" />
+    <Content Include="quotation\CPCB4\Old\CPCB_IV+320-750_kVA.PDF" />
+    <Content Include="quotation\CPCB4\Old\CPCB_IV+7.5-20_kVA.PDF" />
+    <Content Include="quotation\CPCB4\Old\CPCB_IV+82.5-160_kVA.PDF" />
+    <Content Include="quotation\CPCB4\OP_CPCB IV+117-2000_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\AirCooled\15 kVA\FOUNDATION_DRG_KG1_15AS1_HA294_G1_15_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\AirCooled\15 kVA\Installation_Guideline_15_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\AirCooled\25 kVA\FOUNDATION_DRG_KG1_25AS2_HA394TCI_G1_25_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\AirCooled\25 kVA\Installation_Guideline_25_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\AirCooled\30 kVA\FOUNDATION_DRG_FOR_30_kVA_HA394TCI_G2.pdf" />
+    <Content Include="quotation\InstallationGuideline\AirCooled\30 kVA\Installation_Guideline_30_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\AirCooled\40 kVA\FOUNDATION_DRG_KG1_40AS1_HA494TCI_G1_40_KVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\AirCooled\40 kVA\Installation_Guideline_40_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\AirCooled\62.5 kVA\FOUNDATION_DRG_KG1_62.5AS1_HA694TCI_G1_62.5_KVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\AirCooled\62.5 kVA\Installation_Guideline_62.5_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\QuotKWS.rpt.exclude" />
+    <Content Include="quotation\InstallationGuideline\QuotKWS100821.rpt.exclude" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\100_250_kVA\100 kVA\FOUNDATION_DRG_100_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\100_250_kVA\100 kVA\Installation_Guideline_100_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\100_250_kVA\125 kVA\FOUNDATION_DRG_125_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\100_250_kVA\125 kVA\Installation_Guideline_125_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\100_250_kVA\140 kVA\Installation_Guideline_140_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\100_250_kVA\160 kVA\FOUNDATION_DRG_160_KVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\100_250_kVA\160 kVA\Installation_Guideline_160_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\100_250_kVA\200 kVA\FOUNDATION_DRG_200_KVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\100_250_kVA\200 kVA\Installation_Guideline_200_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\100_250_kVA\250 kVA\FOUNDATION_DRG_250_KVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\100_250_kVA\250 kVA\Installation_Guideline_250_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\20_82.5_kVA\20 kVA\FOUNDATION_DRG_20_KVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\20_82.5_kVA\20 kVA\Installation_Guideline_20_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\20_82.5_kVA\25 kVA\FOUNDATION_DRG_25_KVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\20_82.5_kVA\25 kVA\Installation_Guideline_25_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\20_82.5_kVA\30 kVA\FOUNDATION_DRG_30_KVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\20_82.5_kVA\30 kVA\Installation_Guideline_30_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\20_82.5_kVA\40 kVA\FOUNDATION_DRG_40_KVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\20_82.5_kVA\40 kVA\Installation_Guideline_40_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\20_82.5_kVA\62.5 kVA\FOUNDATION_DRG_62.5_KVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\20_82.5_kVA\62.5 kVA\Installation_Guideline_62.5_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\20_82.5_kVA\82.5 kVA\FOUNDATION_DRG_82.5_KVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\20_82.5_kVA\82.5 kVA\Installation_Guideline_82.5_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\320_750_kVA\320 kVA\FOUNDATION_DRG_320_KVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\320_750_kVA\320 kVA\Installation_Guideline_320_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\320_750_kVA\400 kVA\FOUNDATION_DRG_400_KVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\320_750_kVA\400 kVA\Installation_Guideline_400_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\320_750_kVA\500 kVA\FOUNDATION_DRG_500_KVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\320_750_kVA\500 kVA\Installation_Guideline_500_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\320_750_kVA\625 kVA\FOUNDATION_DRG_625_KVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\320_750_kVA\625 kVA\Installation_Guideline_625_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\320_750_kVA\750 kVA\FOUNDATION_DRG_750_KVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled\320_750_kVA\750 kVA\Installation_Guideline_750_kVA.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\DV_SERIES_400_750_kVA\400 kVA\DV8ETA_4G2_400kVA_FD.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\DV_SERIES_400_750_kVA\400 kVA\DV8ETA_4G2_400kVA_IGM.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\DV_SERIES_400_750_kVA\500 kVA\DV8ETA_4G2_500kVA_FD.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\DV_SERIES_400_750_kVA\500 kVA\DV8ETA_4G3_500kVA_IGM.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\DV_SERIES_400_750_kVA\625 kVA\DV10ETA_4G2_625kVA_FD.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\DV_SERIES_400_750_kVA\625 kVA\DV10ETA_4G2_625kVA_IGM.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\DV_SERIES_400_750_kVA\750 kVA\DV12ETA_4G2_750kVA_FD.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\DV_SERIES_400_750_kVA\750 kVA\DV12ETA_4G2_750kVA_IGM.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\K_Series_100_200_kVA\100 kVA\4K1080ETA_4G1_100kVA_FD.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\K_Series_100_200_kVA\100 kVA\4K1080ETA_4G1_I100kVA_IGM.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\K_Series_100_200_kVA\125 kVA\4K1080ETA_4G1_125kVA_FD.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\K_Series_100_200_kVA\125 kVA\4K1080ETA_4G1_125kVA_IGM.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\K_Series_100_200_kVA\160 kVA\6K1080ETA_4G1_160kVA_FD.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\K_Series_100_200_kVA\160 kVA\6K1080ETA_4G1_160kVA_IGM.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\K_Series_100_200_kVA\200 kVA\6K1080ETA_4G1_200kVA_FD.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\K_Series_100_200_kVA\200 kVA\6K1080ETA_4G1_200kVA_IGM.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\R_Series_10_82.5_kVA\10 kVA\3R550NA_4G1_10kVA_FD.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\R_Series_10_82.5_kVA\10 kVA\3R550NA_4G1_10kVA_IGM.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\R_Series_10_82.5_kVA\15 kVA\3R550TC_4G1_15kVA_FD.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\R_Series_10_82.5_kVA\15 kVA\3R550TC_4G1_15kVA_IGM.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\R_Series_10_82.5_kVA\20 kVA\3R550TA_4G1_20kVA_FD.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\R_Series_10_82.5_kVA\20 kVA\3R550TA_4G1_20kVA_IGM.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\R_Series_10_82.5_kVA\25 kVA\3R550ETA_4G1_25kVA_FD.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\R_Series_10_82.5_kVA\25 kVA\3R550ETA_4G1_25kVA_IGM.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\R_Series_10_82.5_kVA\30 kVA\3R1190ENA_4G1_30kVA_FD.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\R_Series_10_82.5_kVA\30 kVA\3R1190ENA_4G1_30kVA_IGM.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\R_Series_10_82.5_kVA\40 kVA\3R1190ETA_4G1_40kVA_FD.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\R_Series_10_82.5_kVA\40 kVA\3R1190ETA_4G1_40kVA_IGM.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\R_Series_10_82.5_kVA\45 kVA\3R1190ETA_4G1_45kVA_FD.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\R_Series_10_82.5_kVA\45 kVA\3R1190ETA_4G1_45kVA_IGM.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\R_Series_10_82.5_kVA\58.5 kVA\4R810ETA_4G1_58.5kVA_FD.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\R_Series_10_82.5_kVA\58.5 kVA\4R810ETA_4G1_58.5kVA_IGM.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\R_Series_10_82.5_kVA\82.5 kVA\4R1190ETA_82.5kVA_FD.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\R_Series_10_82.5_kVA\82.5 kVA\4R1190ETA_82.5kVA_IGM.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\SL_Series_250_320_kVA\250 kVA\6SL90ETA_4G2_250kVA_FD.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\SL_Series_250_320_kVA\250 kVA\6SL90ETA_4G2_250kVA_IGM.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\SL_Series_250_320_kVA\320 kVA\6SL90ETA_4G3_320kVA_FD.pdf" />
+    <Content Include="quotation\InstallationGuideline\WaterCooled_New\SL_Series_250_320_kVA\320 kVA\6SL90ETA_4G3_320kVA_IGM.pdf" />
+    <Content Include="quotation\07122023Copy of KALA.rpt" />
+    <Content Include="quotation\07122023Copy of KALAiGreen.rpt" />
+    <Content Include="quotation\21122023Copy of KALA.rpt" />
+    <Content Include="quotation\21122023Copy of KALAiGreen.rpt" />
+    <Content Include="quotation\Anubandh.pdf" />
+    <Content Include="quotation\CompanyProfile.pdf" />
+    <Content Include="quotation\CompanyProfileKBPL.pdf" />
+    <Content Include="quotation\Copy of KALACPCBIV.rpt" />
+    <Content Include="quotation\HeatLoad.rpt" />
+    <Content Include="quotation\HeatLoadSpecs.rpt" />
+    <Content Include="quotation\KALA.rpt" />
+    <Content Include="quotation\KALACPCBIV.rpt" />
+    <Content Include="quotation\KALAGasDGCPCBIV.rpt" />
+    <Content Include="quotation\KALAGasDGCPCBIV_old.rpt" />
+    <Content Include="quotation\KALAiGreen.rpt" />
+    <Content Include="quotation\KALAiGreenCPCBIV.rpt" />
+    <Content Include="quotation\KALAiGreenCPCBIV_21122023.rpt" />
+    <Content Include="quotation\KALAInstallation.rpt" />
+    <Content Include="quotation\KALA_ControlPanel.rpt" />
+    <Content Include="quotation\KALA_KBPL.rpt" />
+    <Content Include="quotation\KBPLNew.rpt" />
+    <Content Include="quotation\KBPLNewAnnexII.rpt" />
+    <Content Include="quotation\KBPLNewAnnexIIOA.rpt" />
+    <Content Include="quotation\KBPLNewAnnexIV.rpt" />
+    <Content Include="quotation\KBPLNewAnnexIVOA.rpt" />
+    <Content Include="quotation\KBPLNewBOMAnnexII.rpt" />
+    <Content Include="quotation\KBPLNewBOMAnnexIICIA.rpt" />
+    <Content Include="quotation\KBPLNewBOMAnnexIICommercial.rpt" />
+    <Content Include="quotation\KBPLNewBOMAnnexIIHOD.rpt" />
+    <Content Include="quotation\KBPLOA.rpt" />
+    <Content Include="quotation\QuotKWS.rpt" />
+    <Content Include="quotation\QuotKWS_CustScope.rpt" />
+    <Content Include="quotation\QuotKWS_DECANTER_SYSTEM.rpt" />
+    <Content Include="quotation\QuotKWS_Old.rpt" />
+    <Content Include="quotation\KALAiGreenCPCBIV1yrWarranty.rpt" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Temp_PDF\07004139.pdf" />
+    <Content Include="Temp_PDF\kala.pdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Controllers\Biotech\Plan\" />
+    <Folder Include="Controllers\Purchase\Reports\" />
+    <Folder Include="locker\" />
+    <Folder Include="Models\Biotech\Auth\" />
+    <Folder Include="Models\Biotech\Plan\" />
+    <Folder Include="Service\Biotech\Auth\" />
+    <Folder Include="Service\Biotech\Plan\" />
+    <Folder Include="Views\InvoiceBioSer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60093</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44386/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

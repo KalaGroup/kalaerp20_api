@@ -1,0 +1,86 @@
+<h2 id="tableLabel" style="font-size:22px;">Purchase Requisition Quantity</h2>
+<div class="card">
+  
+  <div class="card-body">
+<div class="gridview">
+  <div class="row" >
+    <div class="column">
+      <label>Part Code:</label>
+      <label>{{purchaseReqList.part_code}}</label>
+    </div>
+    <div class="column" style="padding-left: 15px;">
+      <label> UOM :</label>
+      <label>{{purchaseReqList.purchase_req_uom}}</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <label style="font-weight:100">Part Desc:</label>
+      <label>{{purchaseReqList.part_description}}</label>
+    </div>
+  </div>
+  <div class="row">
+    <div style="width:100%" >
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+            <tr>
+              <th class="text-center">Supp Name</th>
+              <th class="text-center">UOM</th>
+              <th class="text-center">Rate</th>
+              <th class="text-center">Curruncy</th>
+              <th class="text-center">Validity</th>
+              <th class="text-center">Qty</th>
+              <th class="text-center">Conv Qty</th> 
+              <th class="text-center">Conv UOM</th>
+             
+            </tr>
+            <tr *ngFor="let person of supplierList; let id = index">
+              <td>
+                <span (keyup)="changeValue(id, 'name', $event)"  >{{person.supplier_name}}</span>
+              </td>
+              <td>
+                <span  (keyup)="changeValue(id, 'age', $event)" >{{person.supplier_uom}}</span>
+              </td>
+              <td>
+                <span  (keyup)="changeValue(id, 'companyName', $event)" >{{person.rate}}</span>
+              </td>
+              <td>
+                <span  (keyup)="changeValue(id, 'country', $event)" >{{person.currency}}</span>
+              </td>
+              <td>
+                <span  (keyup)="changeValue(id, 'city', $event)" >{{"10/10/2020"}}</span>
+              </td>
+              <td>
+                  <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)" >{{person.quantity}}</span>
+                </td>
+                <td>
+                  <span  (keyup)="changeValue(id, 'city', $event)" >{{person.converted_quantity}}</span>
+                </td>
+                <td>
+                  <span  (keyup)="changeValue(id, 'city', $event)" >{{person.converted_uom}}</span>
+                </td>
+              <!-- <td>
+                <span class="table-up">
+                  <a class="indigo-text">
+                    <!-- <mdb-icon fas icon="long-arrow-alt-up"></mdb-icon> 
+                  </a>
+                </span>
+                <span class="table-down">     
+                  <a class="indigo-text">
+                    <!-- <mdb-icon fas icon="long-arrow-alt-down"></mdb-icon> 
+                  </a>
+                </span>
+              </td> -->
+              
+            </tr>
+          </table>
+    </div>
+  </div>
+  <div class="row"><div class="column" style="padding-top: 16px;padding-left: 8px;">
+  <button mat-button (click)="onOKClick()">OK</button>
+  </div>
+  <div class="column" style="padding-top: 16px; padding-left:8px ;">
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+</div></div>
+</div>
+</div>
+</div>

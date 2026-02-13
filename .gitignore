@@ -1,0 +1,53 @@
+﻿## ASP.NET / Visual Studio
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# NuGet packages
+packages/
+*.nupkg
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# Build logs
+*.log
+msbuild*.wrn
+msbuild*.err
+
+# Rider / ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# Temp / Generated files
+Temp_PDF/
+*.tmp
+*.bak
+*.swp
+
+# Web
+node_modules/
+bower_components/
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IIS
+*.iislog
+
+# Publish output
+[Pp]ublish/
