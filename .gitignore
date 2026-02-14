@@ -9,10 +9,6 @@ x86/
 [Oo]bj/
 [Ll]og/
 
-# NuGet packages
-packages/
-*.nupkg
-
 # Visual Studio
 .vs/
 *.suo
